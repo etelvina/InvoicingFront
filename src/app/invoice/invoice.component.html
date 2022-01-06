@@ -1,0 +1,43 @@
+
+<h4>Facturación</h4>
+<dx-data-grid   id="gridContainer" 
+                [dataSource]="invoice" 
+                keyExpr="id" 
+                [rowAlternationEnabled]="true" 
+                (onRowInserting)="add($event)" 
+                (onRowUpdated)="update($event)" 
+                (onRowRemoved)="delete($event)">
+
+    <dxo-export [enabled]="true"></dxo-export>
+
+    <dxo-editing    mode="form" 
+                    [allowUpdating]="true" 
+                    [allowDeleting]="true" 
+                    [allowAdding]="true" 
+                    [useIcons]="true" 
+                    [refreshMode]="'true'">
+
+    </dxo-editing>
+
+    <dxi-column dataField="id" 
+                dataType="number">
+
+    </dxi-column>
+
+    <dxi-column dataField="fecha" 
+                dataType="date">
+
+    </dxi-column>
+
+  <!-- <dxo-master-detail [enabled]="true" [template]="'detail'"></dxo-master-detail>
+
+  <div *dxTemplate="let dataDetail of 'detail'">
+
+    <app-user [IdUser]="dataDetail.data.id"></app-user>
+
+  </div> -->
+
+</dx-data-grid>
+
+<dx-toast [(visible)]="isVisible" [type]="type" [message]="message"></dx-toast>
+<!-- <dx-load-panel [position]="loadPanelPosition" [visible]="isLoading"></dx-load-panel> -->

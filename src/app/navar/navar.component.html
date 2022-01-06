@@ -1,0 +1,21 @@
+<dx-tabs  [dataSource]="navar"
+          [selectedIndex]="0"
+          itemTemplate="navarTemplate">
+
+  <div *dxTemplate="let data of 'navarTemplate'">
+
+    <a  [routerLink]="['/' + data.path]"></a>
+
+    <div class="dx-list-item-icon-container">
+
+      <i class="dx-icon dx-list-item-icon dx-icon-{{data.icon}}"></i>
+      
+    </div>
+
+    <span>{{ data.text }}</span>
+  
+  </div>
+
+</dx-tabs>
+
+<router-outlet></router-outlet>
